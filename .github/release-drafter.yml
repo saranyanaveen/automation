@@ -1,0 +1,50 @@
+# .github/release-drafter.yml
+
+template: |
+  ## Release Title:
+  **[${version}]** Major Release
+
+  ## Release Date:
+  ${date}
+
+  ## Overview:
+  This release includes new features, improvements, and bug fixes.
+
+  ## Highlights:
+  - Key new functionality introduced.
+  - Improved test scripts for better automation.
+
+  ## New Features:
+  ${features}
+
+  ## Improvements/Enhancements:
+  ${improvements}
+
+  ## Bug Fixes:
+  ${bugs}
+
+  ## Known Issues:
+  ${issues}
+  Workaround: No workaround available.
+
+# Define commit labels for categorizing changes
+changes:
+  features: ['feature']
+  improvements: ['enhancement', 'perf']
+  bugs: ['bug', 'fix']
+
+# Versioning format (using the tag version)
+version: 'v${version}'
+
+# Labels to classify issues and commits
+labels:
+  - bug
+  - enhancement
+  - feature
+  - fix
+
+# Specify that the release is in draft state initially
+draft: true
+
+# Target branch for releases (usually master or main)
+target: master
