@@ -27,4 +27,8 @@ categories:
       - fix
 
 draft: true  # Keep the release in draft mode initially
+<<<<<<< HEAD
 target: master  # Set the branch for releases
+=======
+target: master  # Set the branch for releases
+>>>>>>> 17d5d81ce1a8639c96aa8f810322ad1ab3d92e4b
