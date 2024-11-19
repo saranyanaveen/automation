@@ -1,50 +1,30 @@
-# .github/release-drafter.yml
-
+name-template: 'New Feature'  # Release name
+tag-template: 'v$NEXT_PATCH_VERSION'  # Automatic version incrementing
 template: |
-  ## Release Title:
-  **[${version}]** Major Release
-
-  ## Release Date:
-  ${date}
-
   ## Overview:
-  This release includes new features, improvements, and bug fixes.
-
-  ## Highlights:
-  - Key new functionality introduced.
-  - Improved test scripts for better automation.
+  This release introduces new features, improvements, and bug fixes.
 
   ## New Features:
-  ${features}
+  $CHANGES: features
 
-  ## Improvements/Enhancements:
-  ${improvements}
+  ## Improvements:
+  $CHANGES: improvements
 
   ## Bug Fixes:
-  ${bugs}
+  $CHANGES: bugs
 
-  ## Known Issues:
-  ${issues}
-  Workaround: No workaround available.
+categories:
+  - title: Features
+    labels:
+      - feature
+  - title: Improvements
+    labels:
+      - enhancement
+      - perf
+  - title: Bug Fixes
+    labels:
+      - bug
+      - fix
 
-# Define commit labels for categorizing changes
-changes:
-  features: ['feature']
-  improvements: ['enhancement', 'perf']
-  bugs: ['bug', 'fix']
-
-# Versioning format (using the tag version)
-version: 'v${version}'
-
-# Labels to classify issues and commits
-labels:
-  - bug
-  - enhancement
-  - feature
-  - fix
-
-# Specify that the release is in draft state initially
-draft: true
-
-# Target branch for releases (usually master or main)
-target: master
+draft: true  # Keep the release in draft mode initially
+target: master  # Set the branch for releases
