@@ -1,0 +1,30 @@
+name-template: 'New Feature'  # Release name
+tag-template: 'v$NEXT_PATCH_VERSION'  # Automatic version incrementing
+template: |
+  ## Overview:
+  This release introduces new features, improvements, and bug fixes.
+
+  ## New Features:
+  $CHANGES: features
+
+  ## Improvements:
+  $CHANGES: improvements
+
+  ## Bug Fixes:
+  $CHANGES: bugs
+
+categories:
+  - title: Features
+    labels:
+      - feature
+  - title: Improvements
+    labels:
+      - enhancement
+      - perf
+  - title: Bug Fixes
+    labels:
+      - bug
+      - fix
+
+draft: true  # Keep the release in draft mode initially
+target: master  # Set the branch for releases
