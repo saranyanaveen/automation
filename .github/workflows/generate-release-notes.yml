@@ -1,16 +1,21 @@
-name: Release Drafter
+name: Generate Release Notes
 
 on:
   push:
     branches:
-      - master  # Branch where PRs are merged
+      - master  # This triggers the workflow when pushing to the 'master' branch
 
 jobs:
-  draft-release:
+  release:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
 
-      - name: Update draft release
-        uses: release-drafter/release-drafter@v5
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Run Release Drafter
+      uses: release-drafter/release-drafter@v5
+      with:
+        config-name: .github/release-drafter.yml  # Path to your release-drafter config file
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # This passes the GitHub token for authentication
